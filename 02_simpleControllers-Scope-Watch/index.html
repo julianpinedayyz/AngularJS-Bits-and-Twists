@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Simple example of Controllers - Scope - Watch</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app>
+		<div ng-controller="myController">
+			<input type="text" ng-model="name">
+			<h1>{{name}}</h1>
+			<h2>{{age}}</h2>
+		</div>
+		<hr>
+		<div ng-controller="anotherController">
+			<input type="text" ng-model="name">
+			<h1>{{name}}</h1>
+			<h2>{{age}}</h2>
+		</div>
+    </body>
+</html>
+
