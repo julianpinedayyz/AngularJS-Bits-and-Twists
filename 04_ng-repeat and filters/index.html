@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Simple example of native Directives ng-repeat and filters</title>
+		<style>
+			th {
+				background-color: #BEBEBE;
+			}
+			td {
+				width: 100px;
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="myList">
+
+		<h2>List of Customer</h2>
+		<hr>
+<!-- Filter by property -->
+		Filter by Name<input type="text" ng-model="custFilter.name"/>
+		Filter by City<input type="text" ng-model="custFilter.city"/>
+		<br />
+		<h2>Add Customer</h2>
+		Name <input type="text" ng-model="new_name"><br>
+		Age <input type="number" ng-model="new_age"><br>
+		City <input type="text" ng-model="new_city"><br>
+		Joined <input type="text" ng-model="new_joined">(YYYY-MM-DD)<br>
+		orderTotal <input type="number" ng-model="new_orderTotal"><br>
+		<button ng-click="add()">Add</button>
+		<hr>
+<!-- Simple example of a table with ng-repeat -->
+		<table>
+			<tr>
+			<!-- Sort ascending or decending with a click (Dynamically) -->
+				<th ng-click="sortBy='name';reverse=!reverse">Name</th>
+				<th ng-click="sortBy='age';reverse=!reverse">Age</th>
+				<th ng-click="sortBy='city';reverse=!reverse">City</th>
+				<th ng-click="sortBy='joined';reverse=!reverse">Joined</th>
+				<th ng-click="sortBy='orderTotal';reverse=!reverse">Total Order</th>
+				<th>Delete</th>
+				<th>First</th>
+				<th>Middle</th>
+				<th>Last</th>
+			</tr>
+<!-- Now Let's Filter -->
+			<tr ng-repeat="cust in orders | filter:custFilter | orderBy:sortBy:reverse">
+				<td>{{cust.name}}</td>
+				<td>{{cust.age}}</td>
+				<td>{{cust.city}}</td>
+				<td>{{cust.joined | date:'MM/dd/yyyy'}}</td>
+				<!-- Pipe the Currency -->
+				<!-- You can set custom currency -->
+				<td>{{cust.orderTotal | currency}}</td>
+				<td><button ng-click="remove($index)">X</button></td>
+				<td><span ng-show="$first">First</span></td>
+				<td><span ng-show="$middle">Middle</span></td>
+				<td><span ng-show="$last">Last</span></td>
+			</tr>
+		</table>
+		<br />
+		<p>There are {{ orders.length}} orders pending.</p>
+<!-- 		TODO: I want to edit the values.  Make an edit function. -->
+        <script src="app.js"></script>
+    </body>
+</html>
