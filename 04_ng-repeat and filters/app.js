@@ -53,3 +53,26 @@ angular.module('myApp', [])
 			$scope.orders.splice(index, 1)
 		}
 	}])
+	.directive('contenteditable', function() {
+		return {
+		  restrict: 'A',
+		  require: '?ngModel',
+		  link: function(scope, element, attrs, ngModel) {
+		    if(!ngModel) return; // do nothing if no ng-model
+
+		    // Listen for change events to enable binding
+		    element.bind('blur', function() {
+		      scope.$apply(function() {
+			      if( attrs.stripBr && html == '<br>' ) {
+			        html = '';
+			      }
+			      ngModel.$setViewValue(element.html());
+			    });
+		    });
+		    // Specify how UI should be updated
+		    ngModel.$render = function() {
+		      element.html(ngModel.$viewValue || '');
+		    };
+		  }
+		}
+	});
