@@ -44,14 +44,14 @@
 			</tr>
 <!-- Now Let's Filter -->
 			<tr ng-repeat="cust in orders | filter:custFilter | orderBy:sortBy:reverse">
-				<td>{{cust.name}}</td>
-				<td>{{cust.age}}</td>
-				<td>{{cust.city}}</td>
-				<td>{{cust.joined | date:'MM/dd/yyyy'}}</td>
-				<!-- Pipe the Currency -->
-				<!-- You can set custom currency -->
-				<td>{{cust.orderTotal | currency}}</td>
-				<td><button ng-click="remove($index)">X</button></td>
+				<td contenteditable="true" ng-model="cust.name">{{cust.name}}</td>
+				<td contenteditable="true" ng-model="cust.age">{{cust.age}}</td>
+				<td contenteditable="true" ng-model="cust.city">{{cust.city}}</td>
+				<td contenteditable="true" ng-model="cust.joined">{{cust.joined}}</td>
+				<td contenteditable="true" ng-model="cust.orderTotal">{{cust.orderTotal}}</td>
+				<td>
+					<button ng-click="remove($index)">X</button>
+				</td>
 				<td><span ng-show="$first">First</span></td>
 				<td><span ng-show="$middle">Middle</span></td>
 				<td><span ng-show="$last">Last</span></td>
@@ -60,6 +60,10 @@
 		<br />
 		<p>There are {{ orders.length}} orders pending.</p>
 <!-- 		TODO: I want to edit the values.  Make an edit function. -->
+		<p>{{new_value}}<p>
+		<ul>
+			<li ng-repeat="cust in orders">{{cust.joined}}</li>
+		</ul>
         <script src="app.js"></script>
     </body>
 </html>
