@@ -61,12 +61,13 @@ angular.module('myApp', [])
 		    if(!ngModel) return; // do nothing if no ng-model
 
 		    // Listen for change events to enable binding
-		    element.bind('blur', function() {
+		    element.on('blur change keyup', function() {
 		      scope.$apply(function() {
+		      	var html = element.html();
 			      if( attrs.stripBr && html == '<br>' ) {
 			        html = '';
 			      }
-			      ngModel.$setViewValue(element.html());
+			      ngModel.$setViewValue(html.replace(/(<br>)/g, ''));
 			    });
 		    });
 		    // Specify how UI should be updated
