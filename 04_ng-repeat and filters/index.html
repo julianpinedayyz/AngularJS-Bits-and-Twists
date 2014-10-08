@@ -44,7 +44,7 @@
 			</tr>
 <!-- Now Let's Filter -->
 			<tr ng-repeat="cust in orders | filter:custFilter | orderBy:sortBy:reverse">
-				<td contenteditable="true" ng-model="cust.name">{{cust.name}}</td>
+				<td contenteditable strip-br="true" required ng-model="cust.name">{{cust.name}}</td>
 				<td contenteditable="true" ng-model="cust.age">{{cust.age}}</td>
 				<td contenteditable="true" ng-model="cust.city">{{cust.city}}</td>
 				<td contenteditable="true" ng-model="cust.joined">{{cust.joined}}</td>
