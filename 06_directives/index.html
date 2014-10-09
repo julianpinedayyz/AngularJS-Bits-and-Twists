@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Simple example of Directives and Transclusion</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    </head>
+    <body ng-app="myApp">
+    	<div ng-controller="Example">
+    		<button click="click()">{{message}}</button>
+    	</div>
+		<div ng-controller="Example2">
+			<clicker click="handler()">{{message}}</clicker>
+		</div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
