@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Simple example of a Custom Filter</title>
+		<style>
+			th {
+				background-color: #BEBEBE;
+			}
+			td {
+				width: 100px;
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="Filter">
+    	<!-- Simple custom filter -->
+			<p>{{text | clean}}</p>
+		<!-- Filter with custom parameter.  Set any parameter you want -->
+			<p>{{text | cleanParams:'@'}}</p>
+        <script src="app.js"></script>
+    </body>
+</html>
