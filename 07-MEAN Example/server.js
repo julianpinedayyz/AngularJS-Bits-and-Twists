@@ -62,8 +62,8 @@ var Contact = mongoose.model('Contact', contactSchema);
 var app =
   express()
     .set('port', process.env.PORT || 9000)
-    // The route base is ../app
-    .set('views', path.resolve(__dirname, '../app'))
+    // The route base is the app folder
+    .set('views', path.resolve(__dirname, 'app'))
     // Render html by just spitting the file out
     .set('view engine', 'html')
     .engine('html', function (path, options, fn) {
@@ -76,7 +76,7 @@ var app =
     .use(express.bodyParser())
     .use(express.logger('dev'))
     // Serve the app folder statically
-    .use(express.static(path.resolve(__dirname, '../app')));
+    .use(express.static(path.resolve(__dirname, 'app')));
 
 // ========================
 // API
