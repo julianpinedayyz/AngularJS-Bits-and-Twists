@@ -2,7 +2,7 @@
   "name": "mean-example",
   "version": "0.0.1",
   "description": "Easier Javascript Apps with AngularJS",
-  "main": "server/server.js",
+  "main": "server.js",
   "author": "Julian Pineda",
   "license": "MIT",
   "dependencies": {
