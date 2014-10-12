@@ -1,0 +1,52 @@
+		<h2>List of Customer</h2>
+		<hr>
+<!-- Filter by property -->
+		Filter by Name<input type="text" ng-model="custFilter.name"/>
+		Filter by City<input type="text" ng-model="custFilter.city"/>
+		<br />
+		<h2>Add Customer</h2>
+		Name <input type="text" ng-model="new_name"><br>
+		Age <input type="number" ng-model="new_age"><br>
+		City <input type="text" ng-model="new_city"><br>
+		Joined <input type="text" ng-model="new_joined">(YYYY-MM-DD)<br>
+		orderTotal <input type="number" ng-model="new_orderTotal"><br>
+		<button ng-click="add()">Add</button>
+		<hr>
+<!-- Simple example of a table with ng-repeat -->
+		<table>
+			<tr>
+			<!-- Sort ascending or decending with a click (Dynamically) -->
+				<th ng-click="doFilter('name')">Name</th>
+				<th ng-click="doFilter('age')">Age</th>
+				<th ng-click="doFilter('city')">City</th>
+				<th ng-click="doFilter('joined')">Joined</th>
+				<th ng-click="doFilter('orderTotal')">Total Order</th>
+				<th>Delete</th>
+				<th>First</th>
+				<th>Middle</th>
+				<th>Last</th>
+				<th>Orders</th>
+			</tr>
+<!-- Now Let's Filter -->
+			<tr ng-repeat="cust in customers | filter:custFilter | orderBy:sortBy:reverse">
+				<td ng-model="cust.name">{{cust.name}}</td>
+				<td contenteditable="true" ng-model="cust.age">{{cust.age}}</td>
+				<td contenteditable="true" ng-model="cust.city">{{cust.city}}</td>
+				<td contenteditable="true" ng-model="cust.joined">{{cust.joined}}</td>
+				<td contenteditable="true" ng-model="cust.orderTotal">{{cust.orderTotal}}</td>
+				<td>
+					<button ng-click="remove($index)">X</button>
+				</td>
+				<td><span ng-show="$first">First</span></td>
+				<td><span ng-show="$middle">Middle</span></td>
+				<td><span ng-show="$last">Last</span></td>
+				<td><a href="#/orders/{{cust.id}}">View</a></td>
+			</tr>
+		</table>
+		<br />
+		<p>There are {{ customers.length}} customers pending.</p>
+<!-- 		TODO: I want to edit the values.  Make an edit function. -->
+		<p>{{new_value}}<p>
+		<ul>
+			<li ng-repeat="cust in customers">{{cust.joined}}</li>
+		</ul>
