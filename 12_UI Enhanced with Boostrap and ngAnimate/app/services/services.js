@@ -5,13 +5,25 @@ angular.module('myApp')
 		var factory = {};
 
 		factory.getCustomers = function(){
-			return $http.get('/customers');
+			return $http({
+				method: 'GET',
+				url: '/customers',
+				cache: true
+			});
 		};
 		factory.getCustomer = function(){
-			return $http.get('/customers/' + $routeParams.customerId);
+			return $http({
+				method: 'GET',
+				url: '/customers/' + $routeParams.customerId,
+				cache: true
+			});
 		};
 		factory.getOrders = function() {
-            return $http.get('/orders');
+            return $http({
+            	method: 'GET',
+            	url: '/orders',
+            	cache: true
+            });
         }
         factory.deleteCustomer = function(customerId) {
             return $http.delete('/customers/' + $routeParams.customerId);
