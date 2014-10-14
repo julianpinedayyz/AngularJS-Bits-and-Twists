@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Values and Constants</title>
+		<link rel="stylesheet" href="css/main.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+    </head>
+    <body ng-app="myApp">
+    <header>
+    	<nav>
+    		<ul>
+    			<li><a href="#/customers">Customers</a></li>
+    			<li><a href="#/orders">Orders</a></li>
+    		</ul>
+    	</nav>
+    </header>
+    <main>
+    	<div ng-view></div>
+    </main>
+		<script src="app.js"></script>
+		<script src="app/services/values.js"></script>
+        <script src="app/controllers/controllers.js"></script>
+        <script src="app/directives/directives.js"></script>
+        <script src="app/services/services.js"></script>
+    </body>
+</html>
