@@ -33,9 +33,26 @@ angular.module('myApp')
 			$scope.new_city = '';
 			$scope.new_orderTotal = '';
 		}
-		$scope.remove = function(index){
-			$scope.customers.splice(index, 1)
-		}
+		// $scope.remove = function(customerId){
+		// 	// $scope.customers.splice(customerId, 1)
+		// 	myFactory.remove(customerId)
+		// 		.success(function(status){
+		// 			if(status){
+		// 				for(var i=0, len=$scope.customers.length;len<i; i++){
+		// 					if($scope.customers[i].id === customerId)
+		// 						$scope.customers.splice(i,1);
+		// 						break;
+		// 				}
+		// 			}
+		// 			else {
+		// 				$window.alert('Unable to delete customers');
+		// 			}
+		// 		})
+		// 		.error(function(data, status, headers, config){
+		// 			//using $log to retrive errors from the server
+		// 			$log.log(data.error + ' ' + status)
+		// 		});
+		// }
 		$scope.doFilter = function(propName){
 			$scope.sortBy = propName;
 			$scope.reverse = !$scope.reverse;

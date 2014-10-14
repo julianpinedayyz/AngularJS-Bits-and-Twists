@@ -25,9 +25,9 @@ angular.module('myApp')
             	cache: true
             });
         }
-        factory.deleteCustomer = function(customerId) {
-            return $http.delete('/customers/' + $routeParams.customerId);
-        }
+        // factory.remove = function(customerId) {
+        //     return $http.delete('/customers/' + $routeParams.customerId);
+        // }
 		return factory;
 	}])
 }());
