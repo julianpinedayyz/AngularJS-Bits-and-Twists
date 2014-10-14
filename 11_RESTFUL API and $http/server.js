@@ -55,6 +55,7 @@ app.listen(8080);
 
 console.log('Express listening on port 8080');
 
+//This can be done with MongoDB. See the MEAN folder
 var customers =[
             {
                 id: 1,
