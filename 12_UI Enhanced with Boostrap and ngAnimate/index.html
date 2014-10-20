@@ -8,17 +8,23 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
     </head>
     <body ng-app="myApp">
-    <header>
-    	<nav class="navbar navbar-default">
-    		<ul class="nav navbar-nav">
-    			<li><a href="#/customers">Customers</a></li>
-    			<li><a href="#/orders">Orders</a></li>
-    		</ul>
-    	</nav>
-    </header>
-    <main>
-    	<div ng-view></div>
-    </main>
+    <div class="container">
+        <div class="row">
+            <header>
+                <nav class="navbar navbar-default">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/customers">Customers</a></li>
+                        <li><a href="#/orders">Orders</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="row">
+            <main class="col-xs-12">
+                <div ng-view></div>
+            </main>
+        </div>
+    </div>
     	<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="app.js"></script>

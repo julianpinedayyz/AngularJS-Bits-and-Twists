@@ -1,5 +1,11 @@
-<h2>Customers' Orders</h2>
-Filter: <input type="text" ng-model="orderFilter.product">
+<div class="page-header">
+	<h2>Customers' Orders</h2>
+</div>
+<div class="input-group col-md-5">
+	<span class="input-group-addon">Filter by Product:</span>
+	<input type="text" ng-model="orderFilter.product" class="form-control">
+</div>
+<br />
 <table class="table">
 	<tr>
 		<th>Product</th>

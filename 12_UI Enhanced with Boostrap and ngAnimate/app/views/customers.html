@@ -1,52 +1,83 @@
-		<h2>{{appSettings.title}}</h2>
+		<div class="page-header">
+			<h2>{{appSettings.title}}</h2>
+		</div>
+		<div >
+	<!-- Filter by property -->
+			<form class="form-inline" role="form">
+				<div class="input-group col-md-5">
+					<span class="input-group-addon">Filter by Name</span>
+					<input type="text" ng-model="custFilter.name" class="form-control"/>
+				</div>
+				<div class="input-group col-md-5">
+					<span class="input-group-addon">Filter by City</span>
+					<input type="text" ng-model="custFilter.city" class="form-control"/>
+				</div>
+				<br /><br />
+				<h3>Add Customer</h3>
+				<br />
+				<div class="input-group col-md-3">
+					<span class="input-group-addon">Name</span>
+					<input type="text" ng-model="new_name" class="form-control">
+				</div>
+				<div class="input-group col-md-2">
+					<span class="input-group-addon">Age</span>
+					<input type="text" ng-model="new_age" class="form-control">
+				</div>
+				<div class="input-group col-md-3">
+					<span class="input-group-addon">City</span>
+					<input type="text" ng-model="new_city" class="form-control">
+				</div>
+				<div class="input-group col-md-3">
+					<span class="input-group-addon">Date (YYYY-MM-DD)</span>
+					<input type="text" ng-model="new_joined" class="form-control">
+				</div>
+				<br /><br />
+				<div class="input-group col-md-2">
+					<span class="input-group-addon">Total Order</span>
+					<input type="text" ng-model="new_orderTotal" class="form-control">
+				</div>
+				<button ng-click="add()" class="btn btn-success">Add New User</button>
+			</form>
+		</div>
 		<hr>
-<!-- Filter by property -->
-		Filter by Name<input type="text" ng-model="custFilter.name"/>
-		Filter by City<input type="text" ng-model="custFilter.city"/>
-		<br />
-		<h2>Add Customer</h2>
-		Name <input type="text" ng-model="new_name"><br>
-		Age <input type="number" ng-model="new_age"><br>
-		City <input type="text" ng-model="new_city"><br>
-		Joined <input type="text" ng-model="new_joined">(YYYY-MM-DD)<br>
-		orderTotal <input type="number" ng-model="new_orderTotal"><br>
-		<button ng-click="add()">Add</button>
-		<hr>
-<!-- Simple example of a table with ng-repeat -->
-		<table class="table table-striped">
-			<thead>
-				<tr class="success">
-				<!-- Sort ascending or decending with a click (Dynamically) -->
-					<th ng-click="doFilter('name')">Name</th>
-					<th ng-click="doFilter('age')">Age</th>
-					<th ng-click="doFilter('city')">City</th>
-					<th ng-click="doFilter('joined')">Joined</th>
-					<th ng-click="doFilter('orderTotal')">Total Order</th>
-	<!-- 				<th>Delete</th>
-					<th>First</th>
-					<th>Middle</th>
-					<th>Last</th> -->
-					<th>Orders</th>
-				</tr>
-			</thead>
-<!-- Now Let's Filter -->
-			<tbody>
-				<tr ng-repeat="cust in customers | filter:custFilter | orderBy:sortBy:reverse">
-					<td ng-model="cust.name">{{cust.name}}</td>
-					<td contenteditable="true" ng-model="cust.age">{{cust.age}}</td>
-					<td contenteditable="true" ng-model="cust.city">{{cust.city}}</td>
-					<td contenteditable="true" ng-model="cust.joined">{{cust.joined}}</td>
-					<td contenteditable="true" ng-model="cust.orderTotal">{{cust.orderTotal | currency}}</td>
-	<!-- 				<td><span ng-show="$first">First</span></td>
-					<td><span ng-show="$middle">Middle</span></td>
-					<td><span ng-show="$last">Last</span></td> -->
-					<td><a href="#/orders/{{cust.id}}">View</a></td>
-	<!-- 				<td class="center">
-						<button type="button" class="btn btn-danger" ng-click="remove(cust.id)"><span class="glyphicon glyphicon-remove delete"></span></button>
-					</td> -->
-				</tr>
-			</tbody>
-		</table>
+		<div class="col-xs-12">
+			<!-- Simple example of a table with ng-repeat -->
+					<table class="table table-striped">
+						<thead>
+							<tr class="success">
+							<!-- Sort ascending or decending with a click (Dynamically) -->
+								<th ng-click="doFilter('name')">Name</th>
+								<th ng-click="doFilter('age')">Age</th>
+								<th ng-click="doFilter('city')">City</th>
+								<th ng-click="doFilter('joined')">Joined</th>
+								<th ng-click="doFilter('orderTotal')">Total Order</th>
+				<!-- 				<th>Delete</th>
+								<th>First</th>
+								<th>Middle</th>
+								<th>Last</th> -->
+								<th>Orders</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+			<!-- Now Let's Filter -->
+						<tbody>
+							<tr ng-repeat="cust in customers | filter:custFilter | orderBy:sortBy:reverse">
+								<td ng-model="cust.name">{{cust.name}}</td>
+								<td contenteditable="true" ng-model="cust.age">{{cust.age}}</td>
+								<td contenteditable="true" ng-model="cust.city">{{cust.city}}</td>
+								<td contenteditable="true" ng-model="cust.joined">{{cust.joined}}</td>
+								<td contenteditable="true" ng-model="cust.orderTotal">{{cust.orderTotal | currency}}</td>
+				<!-- 				<td><span ng-show="$first">First</span></td>
+								<td><span ng-show="$middle">Middle</span></td>
+								<td><span ng-show="$last">Last</span></td> -->
+								<td><a href="#/orders/{{cust.id}}">View</a></td>
+								<td class="center">
+									<button type="button" class="btn btn-danger" ng-click="remove(cust.id)"><span class="glyphicon glyphicon-remove delete"></span></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+		</div>
 		<br />
 		<p>There are {{ customers.length}} customers pending.</p>
 		<footer>
