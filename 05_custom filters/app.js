@@ -23,6 +23,12 @@ angular.module('myApp', [])
 					.replace(filter, '');
 		}
 	})
+	.filter('stripTags', function(){
+		return function(input){
+			return input.replace(/(<p>|<\/p>)/g, '');
+		}
+	})
 	.controller('Filter', ['$scope', function($scope){
-		$scope.text = 'Hello World, this is a clean filter!'
+		$scope.text = 'Hello World, this is a clean filter!';
+		$scope.tags = '<p>Hello I have tags</p>';
 	}]);
