@@ -1,45 +1,43 @@
 		<div class="page-header">
 			<h2>{{appSettings.title}}</h2>
 		</div>
-		<div >
 	<!-- Filter by property -->
-			<form class="form-inline" role="form">
-				<div class="input-group col-md-5">
-					<span class="input-group-addon">Filter by Name</span>
-					<input type="text" ng-model="custFilter.name" class="form-control"/>
-				</div>
-				<div class="input-group col-md-5">
-					<span class="input-group-addon">Filter by City</span>
-					<input type="text" ng-model="custFilter.city" class="form-control"/>
-				</div>
-				<br /><br />
-				<h3>Add Customer</h3>
-				<br />
-				<div class="input-group col-md-3">
-					<span class="input-group-addon">Name</span>
-					<input type="text" ng-model="new_name" class="form-control">
-				</div>
-				<div class="input-group col-md-2">
-					<span class="input-group-addon">Age</span>
-					<input type="text" ng-model="new_age" class="form-control">
-				</div>
-				<div class="input-group col-md-3">
-					<span class="input-group-addon">City</span>
-					<input type="text" ng-model="new_city" class="form-control">
-				</div>
-				<div class="input-group col-md-3">
-					<span class="input-group-addon">Date (YYYY-MM-DD)</span>
-					<input type="text" ng-model="new_joined" class="form-control">
-				</div>
-				<br /><br />
-				<div class="input-group col-md-2">
-					<span class="input-group-addon">Total Order</span>
-					<input type="text" ng-model="new_orderTotal" class="form-control">
-				</div>
-				<button ng-click="add()" class="btn btn-success">Add New User</button>
-			</form>
-		</div>
-		<hr>
+<!-- 		<form class="form-inline" role="form">
+			<div class="input-group col-md-5">
+				<span class="input-group-addon">Filter by Name</span>
+				<input type="text" ng-model="custFilter.name" class="form-control"/>
+			</div>
+			<div class="input-group col-md-5">
+				<span class="input-group-addon">Filter by City</span>
+				<input type="text" ng-model="custFilter.city" class="form-control"/>
+			</div>
+			<br /><br />
+			<h3>Add Customer</h3>
+			<br />
+			<div class="input-group col-md-3">
+				<span class="input-group-addon">Name</span>
+				<input type="text" ng-model="new_name" class="form-control">
+			</div>
+			<div class="input-group col-md-2">
+				<span class="input-group-addon">Age</span>
+				<input type="text" ng-model="new_age" class="form-control">
+			</div>
+			<div class="input-group col-md-3">
+				<span class="input-group-addon">City</span>
+				<input type="text" ng-model="new_city" class="form-control">
+			</div>
+			<div class="input-group col-md-3">
+				<span class="input-group-addon">Date (YYYY-MM-DD)</span>
+				<input type="text" ng-model="new_joined" class="form-control">
+			</div>
+			<br /><br />
+			<div class="input-group col-md-2">
+				<span class="input-group-addon">Total Order</span>
+				<input type="text" ng-model="new_orderTotal" class="form-control">
+			</div>
+			<button ng-click="add()" class="btn btn-success">Add New User</button>
+		</form> -->
+		<!-- <hr> -->
 		<div class="col-xs-12">
 			<!-- Simple example of a table with ng-repeat -->
 					<table class="table table-striped">
@@ -56,7 +54,7 @@
 								<th>Middle</th>
 								<th>Last</th> -->
 								<th>Orders</th>
-								<th>&nbsp;</th>
+								<!-- <th>&nbsp;</th> -->
 							</tr>
 						</thead>
 			<!-- Now Let's Filter -->
@@ -71,9 +69,9 @@
 								<td><span ng-show="$middle">Middle</span></td>
 								<td><span ng-show="$last">Last</span></td> -->
 								<td><a href="#/orders/{{cust.id}}">View</a></td>
-								<td class="center">
+<!-- 								<td class="center">
 									<button type="button" class="btn btn-danger" ng-click="remove(cust.id)"><span class="glyphicon glyphicon-remove delete"></span></button>
-								</td>
+								</td> -->
 							</tr>
 						</tbody>
 					</table>

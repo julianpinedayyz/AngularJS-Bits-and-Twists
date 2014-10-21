@@ -19,26 +19,28 @@ angular.module('myApp')
 		}
 		init();
 
-		$scope.add = function(){
-			$scope.customers.push({
-				name: $scope.new_name,
-				age: $scope.new_age,
-				joined: $filter('date')($scope.new_joined, 'MM/dd/yyyy'),
-				city: $scope.new_city,
-				orderTotal: $scope.new_orderTotal
-			});
-			$scope.new_name = '';
-			$scope.new_age = '';
-			$scope.new_joined = '';
-			$scope.new_city = '';
-			$scope.new_orderTotal = '';
-		}
+		// $scope.add = function(){
+		// 	$scope.newCustomer = [];
+		// 	$scope.newCustomer.push({
+		// 		name: $scope.new_name,
+		// 		age: $scope.new_age,
+		// 		joined: $filter('date')($scope.new_joined, 'MM/dd/yyyy'),
+		// 		city: $scope.new_city,
+		// 		orderTotal: $scope.new_orderTotal
+		// 	});
+		// 	$scope.new_name = '';
+		// 	$scope.new_age = '';
+		// 	$scope.new_joined = '';
+		// 	$scope.new_city = '';
+		// 	$scope.new_orderTotal = '';
+		// 	return $scope.newCustomer;
+		// }
 		// $scope.remove = function(customerId){
 		// 	// $scope.customers.splice(customerId, 1)
 		// 	myFactory.remove(customerId)
 		// 		.success(function(status){
 		// 			if(status){
-		// 				for(var i=0, len=$scope.customers.length;len<i; i++){
+		// 				for(var i=0, len=$scope.customers.length;i<len; i++){
 		// 					if($scope.customers[i].id === customerId)
 		// 						$scope.customers.splice(i,1);
 		// 						break;
