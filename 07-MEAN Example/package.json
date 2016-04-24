@@ -5,9 +5,10 @@
   "main": "server.js",
   "author": "Julian Pineda",
   "license": "MIT",
-  "dependencies": {
-    "express": "~3.0.6",
-    "mongoose": "~3.5.4"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miroamarillo/AngularJS-Bits-and-Twists/tree/master/07-MEAN%20Example"
+  },
   "devDependencies": {
     "express": "^4.13.4",
     "mongoose": "^4.4.13"
