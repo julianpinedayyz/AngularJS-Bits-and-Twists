@@ -5,7 +5,7 @@
 */
 (function () {
 	var myApp = angular.module('myApp', ['ngRoute'])
-		.config(['$routeProvider',function($routeProvider) {
+		.config(['$routeProvider', '$locationProvider',function($routeProvider, $locationProvider) {
 			$routeProvider
 				.when('/', {
 					controller: 'myList',
@@ -15,6 +15,7 @@
 					controller: 'myOrders',
 					templateUrl: 'views/orders.html'
 				})
-				.otherwise( {redirectTo: '/' } );
+				.otherwise( {redirectTo: '/' });
+			$locationProvider.html5Mode(true);
 		}])
 }());
